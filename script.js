@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const passwordInput = document.getElementById("password");
 
   const validUsers = [
-    { username: "jean", password: "flowers123" },
-    { username: "rose", password: "oursday" }
+    { username: "Jean", password: "Red" },
+    { username: "RK", password: "white" },
+    { username: "Rose", password: "white" },
+    { username: "Key", password: "pink" }
   ];
 
   function startFlowerAnimation() {
@@ -82,22 +84,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function handleLogin() {
-    const enteredUsername = usernameInput.value.trim();
-    const enteredPassword = passwordInput.value.trim();
+  const enteredUsername = usernameInput.value.trim().toLowerCase();
+  const enteredPassword = passwordInput.value.trim().toLowerCase(); //  now lowercased
 
-    const match = validUsers.some(user =>
-      user.username === enteredUsername && user.password === enteredPassword
-    );
+  const match = validUsers.some(user =>
+    user.username.toLowerCase() === enteredUsername &&
+    user.password.toLowerCase() === enteredPassword //  compare lowercased
+  );
 
-    if (match) {
-      loginError.textContent = "";
-      loginScreen.style.display = "none";
-      protectedContent.style.display = "block";
-      startFlowerAnimation();
-    } else {
-      loginError.textContent = "Invalid username or password.";
-    }
+  if (match) {
+    loginError.textContent = "";
+    loginScreen.style.display = "none";
+    protectedContent.style.display = "block";
+    startFlowerAnimation();
+  } else {
+    loginError.textContent = "Invalid username or password.";
   }
+}
 
   loginBtn.addEventListener("click", handleLogin);
 
