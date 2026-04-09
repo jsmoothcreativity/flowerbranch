@@ -1,0 +1,134 @@
+body {
+  background: #131b21;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-box {
+  width: min(92%, 420px);
+  background: #1b252d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 28px 22px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.login-box h2 {
+  color: #ffffff;
+  margin: 0 0 18px;
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 600;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.error {
+  color: #ff9d9d;
+  min-height: 20px;
+  margin: 12px 0 0;
+  font-size: 14px;
+}
+
+.protected-content {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(94%, 760px);
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  box-sizing: border-box;
+}
+
+svg#flower-frame {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+}
+
+.message {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 24px;
+  line-height: 1.8;
+  font-size: clamp(26px, 7vw, 42px);
+  font-weight: 500;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+.message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.message p {
+  margin: 0 0 18px;
+}
+
+#Footer_group_1_,
+[id^=PinkFlowerGroup],
+[id^=BaseGroup] path,
+[id^=LeafGroup] path,
+path[id^=Stroke],
+g[id^=BudGroup] g[id^=BudGroup] g[id^=Bud],
+#Bud8_1_,
+#Bud10_1_,
+#Bud23_1_,
+#Bud26_1_,
+[id^=Dots],
+[id^=Flourish] {
+  visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 16px 12px 32px;
+  }
+
+  .message {
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.7;
+    padding: 0 8px;
+  }
+
+  .login-box {
+    padding: 24px 18px;
+  }
+}
